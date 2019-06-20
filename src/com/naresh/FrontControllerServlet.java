@@ -29,6 +29,7 @@ public class FrontControllerServlet extends HttpServlet {
 			System.out.println("LoginServlet");
 			UserController.search(request, response);
 			break;
+		}
 
 	}
 
