@@ -16,4 +16,9 @@ public class UserController {
 		System.out.println("register");
 		response.getWriter().append("UserController-register");
 	}
+
+	public static void search(HttpServletRequest request, HttpServletResponse response) {
+		// TODO Auto-generated method stub
+		
+	}
 }

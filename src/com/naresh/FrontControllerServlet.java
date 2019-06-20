@@ -25,6 +25,25 @@ public class FrontControllerServlet extends HttpServlet {
 		System.out.println("path:" + path);
 
 		switch (path) {
+		case "/search.do":
+			System.out.println("LoginServlet");
+			UserController.search(request, response);
+			break;
+
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String requestURI = request.getRequestURI();
+		System.out.println("RequestURI:" + requestURI);
+		
+		String contextPath = request.getContextPath();
+		System.out.println("ContextPath:" + contextPath);
+		
+		String path = requestURI.substring(contextPath.length());
+		System.out.println("path:" + path);
+
+		switch (path) {
 		case "/login.do":
 			System.out.println("LoginServlet");
 			UserController.login(request, response);
@@ -35,17 +54,6 @@ public class FrontControllerServlet extends HttpServlet {
 			UserController.register(request, response);
 			break;
 		}
-
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
 	}
 
 }
